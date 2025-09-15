@@ -5,3 +5,4 @@ RUN yum update -y && \
     useradd aparna && \
     mkdir /folder1 && \
     yum clean all
+CMD ["nginx", "-g", "daemon off;"]
