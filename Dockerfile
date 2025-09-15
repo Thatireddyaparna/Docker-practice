@@ -1,5 +1,7 @@
 FROM almalinux
-RUN yum update -y
-RUN yum install nginx -y
-RUN useradd aparna
-RUN mkdir folder1
+
+RUN yum update -y && \
+    yum install -y nginx && \
+    useradd aparna && \
+    mkdir /folder1 && \
+    yum clean all
