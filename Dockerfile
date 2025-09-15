@@ -1,9 +1,5 @@
-FROM almalinux
-
-RUN yum update -y && \
-    yum install -y nginx && \
-    useradd aparna && \
-    mkdir /folder1 && \
-    yum clean all
-CMD ["google.com"]
-ENTRYPOINT ["ping", "-c5"]
+FROM almalinux:8
+RUN yum install nginx -y
+RUN rm -rf /usr/share/nginx/html/index.html
+COPY qi /usr/share/nginx/html/
+CMD ["nginx", "-g", "daemon off;"]
